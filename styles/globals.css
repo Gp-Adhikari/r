@@ -1,16 +1,80 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+  font-family: "Work Sans";
+  src: url("../fonts/Work_Sans/static/WorkSans-Regular.ttf"), url("../fonts/Work_Sans/static/WorkSans-BlackItalic.ttf"), url("../fonts/Work_Sans/static/WorkSans-Black.ttf"), url("../fonts/Work_Sans/static/WorkSans-Bold.ttf"), url("../fonts/Work_Sans/static/WorkSans-BoldItalic.ttf"), url("../fonts/Work_Sans/static/WorkSans-ExtraBold.ttf"), url("../fonts/Work_Sans/static/WorkSans-ExtraBoldItalic.ttf"), url("../fonts/Work_Sans/static/WorkSans-ExtraLight.ttf"), url("../fonts/Work_Sans/static/WorkSans-ExtraLightItalic.ttf"), url("../fonts/Work_Sans/static/WorkSans-Italic.ttf"), url("../fonts/Work_Sans/static/WorkSans-Light.ttf"), url("../fonts/Work_Sans/static/WorkSans-LightItalic.ttf"), url("../fonts/Work_Sans/static/WorkSans-Medium.ttf"), url("../fonts/Work_Sans/static/WorkSans-MediumItalic.ttf"), url("../fonts/Work_Sans/static/WorkSans-SemiBold.ttf"), url("../fonts/Work_Sans/static/WorkSans-SemiBoldItalic.ttf"), url("../fonts/Work_Sans/static/WorkSans-Thin.ttf"), url("../fonts/Work_Sans/static/WorkSans-ThinItalic.ttf");
 }
 
 * {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Work Sans";
 }
+
+*:focus {
+  outline: none;
+}
+
+.headerWrapper {
+  background-color: #080a13;
+}
+
+.headerWrapper header {
+  max-width: 1250px;
+  margin: auto;
+  padding: 1.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headerWrapper header .searchBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+}
+
+.headerWrapper header .searchBox select,
+.headerWrapper header .searchBox input {
+  border: 0;
+}
+
+.headerWrapper header .searchBox select {
+  background: #ececec;
+  border-radius: 5px 0 0 5px;
+  padding: 0 0.7rem;
+}
+
+.headerWrapper header .searchBox input {
+  padding: 0 0.7rem;
+  width: 320px;
+}
+
+.headerWrapper header .searchBox .searchBtn {
+  background-color: #f6a729;
+  padding: 0.7rem 1rem;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.headerWrapper header .userSignIn p {
+  color: #fff;
+  cursor: pointer;
+}
+/*# sourceMappingURL=globals.css.map */
