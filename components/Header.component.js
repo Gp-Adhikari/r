@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import styles from "../styles/header.module.css";
 
 const Header = () => {
   return (
     <>
-      <div className="headerWrapper">
+      <div className={styles.headerWrapper}>
         <header>
           <Image
             src="/logo.svg"
@@ -12,13 +14,13 @@ const Header = () => {
             width={30}
             height={30}
           />
-          <div className="searchBox">
+          <div className={styles.searchBox}>
             <select>
               <option value="">Any</option>
               <option value="">Near me</option>
             </select>
             <input type="text" />
-            <div className="searchBtn">
+            <div className={styles.searchBtn}>
               <Image
                 src="/search.svg"
                 alt="search icon for the site"
@@ -27,17 +29,19 @@ const Header = () => {
               />
             </div>
           </div>
-          <div className="userSignIn">
-            <p>
-              Hello, Signin {""}
-              <Image
-                src="/downArrow.svg"
-                alt="down arrow for the site"
-                width={10}
-                height={10}
-              />
-            </p>
-          </div>
+          <Link href="/login">
+            <div className={styles.userSignIn}>
+              <p>
+                Hello, Signin {""}
+                <Image
+                  src="/downArrow.svg"
+                  alt="down arrow for the site"
+                  width={10}
+                  height={10}
+                />
+              </p>
+            </div>
+          </Link>
         </header>
       </div>
     </>

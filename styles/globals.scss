@@ -1,4 +1,4 @@
-@import "_color.scss";
+@import "./variables";
 
 @font-face {
   font-family: "Work Sans";
@@ -31,64 +31,5 @@
 
   &:focus {
     outline: none;
-  }
-}
-
-// variables
-$max-width: 1250px;
-
-@mixin center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// header styles
-.headerWrapper {
-  background-color: #080a13;
-
-  header {
-    max-width: $max-width;
-    margin: auto;
-    padding: 1.5rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .searchBox {
-      display: flex;
-      border-radius: 5px;
-
-      select,
-      input {
-        border: 0;
-      }
-
-      select {
-        background: #ececec;
-        border-radius: 5px 0 0 5px;
-        padding: 0 0.7rem;
-      }
-
-      input {
-        padding: 0 0.7rem;
-        width: 320px;
-      }
-
-      .searchBtn {
-        background-color: $primary-color;
-        padding: 0.7rem 1rem;
-        border-radius: 0 5px 5px 0;
-        cursor: pointer;
-        @include center;
-      }
-    }
-
-    .userSignIn {
-      p {
-        color: #fff;
-        cursor: pointer;
-      }
-    }
   }
 }

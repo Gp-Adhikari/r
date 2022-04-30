@@ -1,90 +1,109 @@
-@import "./_color.scss";
+@import "./variables";
 
 .loginWrapper {
-    margin: 2rem 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    
-    .logo {
-        cursor: pointer;
-    }
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .logo {
+    cursor: pointer;
+  }
 }
 
 .h1Center {
-    text-align: center;
-    font-weight: bolder;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
 //form
 .loginForm {
-    max-width: 400px;
-    width: 100%;
-    margin-top: 2rem;
-    position: relative;
-    background-color: #fff;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #fff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
 
-    .formDesign {
-        width: 100%;
-        height: 2.5rem;
-        border-radius: 0 0 30px 30px;
-        background-color: $secondary-color;
-    }
+  .formDesign {
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 0 0 30px 30px;
+    background-color: $secondary-color;
+  }
 }
 
 .actualForm {
-    padding: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
 
-    .createAccount {
-        display: flex;
-        align-items: center;
+  .createAccount {
+    display: flex;
+    align-items: center;
 
-        p {
-            &:nth-last-child(1) {
-                color: $tertiary-color;
-                cursor: pointer;
-                margin-left: .5rem;
-                border-bottom: 2px solid $tertiary-color;
+    p {
+      &:nth-last-child(1) {
+        color: $tertiary-color;
+        cursor: pointer;
+        margin-left: 0.5rem;
+        border-bottom: 2px solid $tertiary-color;
 
-                &:hover {
-                    transform: scale(1.1);
-                    transition: 0.3s ease-in-out;
-                    color: darken($tertiary-color, 10%);
-                    border-bottom: 2px solid darken($tertiary-color, 10%);
-                }
-            }
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.3s ease-in-out;
+          color: darken($tertiary-color, 10%);
+          border-bottom: 2px solid darken($tertiary-color, 10%);
         }
-    
+      }
     }
-
+  }
 }
 
 //login nativation between restaurant and user
 .navigate {
-    margin: 2rem 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    p {
-        cursor: pointer;
-        font-weight: bold;
-        width: 45%;
-        border-bottom: 2px solid #000;
-        padding-bottom: .5rem;
-    }
+  margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  p {
+    cursor: pointer;
+    font-weight: bold;
+    width: 45%;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.5rem;
+  }
 }
 
 .custom_input_field {
-    position: relative;
-    p {
-        margin-bottom: .5rem;
+  p {
+    margin-bottom: 0.5rem;
+  }
+  .input_field {
+    background-color: $secondary-color;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    input {
+      width: 100%;
+      border: none;
+      background-color: transparent;
+      padding: 0.2rem;
+      margin-left: 0.8rem;
+      font-size: 1.1rem;
     }
-    .icon {
-        // position: absolute;
-        display: none;
-    }
+  }
+}
+
+.loginButton {
+  background-color: $primary-color;
+  border-radius: 23px;
+  padding: 0.4rem 1.8rem;
+  border: none;
+  align-self: flex-end;
+  font-weight: bold;
 }

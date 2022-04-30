@@ -43,9 +43,15 @@ const Login = () => {
             <CustomInputField
               title="Phone Number"
               inputType="text"
-              img="/auth/user_profile.svg"
+              imgFirst="/auth/user_profile.svg"
             />
-            {/* <CustomInputField title="Password" inputType="password" /> */}
+            <CustomInputField
+              title="Password"
+              inputType="password"
+              imgFirst="/auth/password.svg"
+              imgSecond="/auth/hide.svg"
+            />
+            <button className={styles.loginButton}>Login</button>
           </div>
         </div>
       </section>
