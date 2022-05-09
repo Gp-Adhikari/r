@@ -1,9 +1,14 @@
 import React from "react";
 
-const Title = ({ text }) => {
+const Title = ({ firstText, secondText }) => {
   return (
     <>
-      <h1>{text}</h1>
+      {firstText !== undefined ? (
+        <div className="title">
+          <h1>{firstText}</h1>
+          {secondText !== undefined ? <h2>{secondText}</h2> : null}
+        </div>
+      ) : null}
     </>
   );
 };

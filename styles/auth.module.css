@@ -23,9 +23,15 @@
   margin-bottom: 2rem;
 }
 
+.h1Small {
+  font-size: 2rem;
+}
+
 .loginForm {
   max-width: 400px;
   width: 100%;
+  max-height: 1100px;
+  height: 100%;
   margin-top: 2rem;
   background-color: #fff;
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
@@ -90,9 +96,18 @@
 .navigate p {
   cursor: pointer;
   font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 45%;
   border-bottom: 2px solid #000;
   padding-bottom: 0.5rem;
+}
+
+.navigate p.current {
+  color: #f6a729;
+  border-bottom: 2px solid #f6a729;
 }
 
 .custom_input_field p {
@@ -121,13 +136,24 @@
   font-size: 1.1rem;
 }
 
+.custom_input_field .input_field .icon {
+  cursor: pointer;
+}
+
 .loginButton {
   background-color: #f6a729;
   border-radius: 23px;
-  padding: 0.4rem 1.8rem;
+  padding: 0.5rem 1.8rem;
   border: none;
   -ms-flex-item-align: end;
       align-self: flex-end;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.signUpButton {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=auth.module.css.map */

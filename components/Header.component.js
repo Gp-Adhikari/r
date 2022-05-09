@@ -29,7 +29,7 @@ const Header = () => {
               />
             </div>
           </div>
-          <Link href="/login">
+          <Link href="/login" passHref={true}>
             <div className={styles.userSignIn}>
               <p>
                 Hello, Signin {""}

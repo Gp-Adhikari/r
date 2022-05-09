@@ -14,4 +14,21 @@
 *:focus {
   outline: none;
 }
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2rem 0;
+}
+
+.title h1,
+.title h2 {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.title h2 {
+  margin-left: 0.3rem;
+}
 /*# sourceMappingURL=globals.css.map */

@@ -33,3 +33,16 @@
     outline: none;
   }
 }
+
+// title
+.title {
+  display: flex;
+  margin: 2rem 0;
+  h1,
+  h2 {
+    align-self: flex-end;
+  }
+  h2 {
+    margin-left: 0.3rem;
+  }
+}
