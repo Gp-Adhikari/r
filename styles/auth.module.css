@@ -23,11 +23,16 @@
   margin-bottom: 2rem;
 }
 
+.h1Small {
+  font-size: 2rem;
+}
+
 .loginForm {
   max-width: 400px;
   width: 100%;
+  max-height: 1100px;
+  height: 100%;
   margin-top: 2rem;
-  position: relative;
   background-color: #fff;
   -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
           box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
@@ -42,6 +47,13 @@
 
 .actualForm {
   padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .actualForm .createAccount {
@@ -56,7 +68,7 @@
 .actualForm .createAccount p:nth-last-child(1) {
   color: #ea455f;
   cursor: pointer;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   border-bottom: 2px solid #ea455f;
 }
 
@@ -84,19 +96,64 @@
 .navigate p {
   cursor: pointer;
   font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 45%;
   border-bottom: 2px solid #000;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
-.custom_input_field {
-  position: relative;
+.navigate p.current {
+  color: #f6a729;
+  border-bottom: 2px solid #f6a729;
 }
 
 .custom_input_field p {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
-.custom_input_field .icon {
-  display: none;
+.custom_input_field .input_field {
+  background-color: #fdcd99;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
 }
+
+.custom_input_field .input_field input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  padding: 0.2rem;
+  margin-left: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.custom_input_field .input_field .icon {
+  cursor: pointer;
+}
+
+.loginButton {
+  background-color: #f6a729;
+  border-radius: 23px;
+  padding: 0.5rem 1.8rem;
+  border: none;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signUpButton {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=auth.module.css.map */
