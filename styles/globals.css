@@ -31,4 +31,14 @@
 .title h2 {
   margin-left: 0.3rem;
 }
+
+.display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.display-none {
+  display: none;
+}
 /*# sourceMappingURL=globals.css.map */

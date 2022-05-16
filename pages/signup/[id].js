@@ -1,9 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import SEO from "../../components/SEO";
-
 import { useRouter } from "next/router";
-
 import styles from "../../styles/auth.module.css";
 import CustomInputField from "../../components/CustomInputField.component";
 import Link from "next/link";
@@ -24,7 +22,7 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-const UserAndRestrauntLogin = ({ currentPath }) => {
+const UserAndRestrauntSignUp = ({ currentPath }) => {
   const router = useRouter();
   const [showUserPassword, setShowUserPassword] = useState(false);
   const [showRestaurantPassword, setShowRestaurantPassword] = useState(false);
@@ -32,7 +30,7 @@ const UserAndRestrauntLogin = ({ currentPath }) => {
   if (currentPath === "user") {
     return (
       <>
-        <SEO title="Login" desc="Login to R for more features." />
+        <SEO title="Sign Up" desc="Sign Up to R for more features." />
         <section className={styles.loginWrapper}>
           <div className={styles.logo}>
             <Image
@@ -52,47 +50,68 @@ const UserAndRestrauntLogin = ({ currentPath }) => {
           <div className={styles.loginForm}>
             <div className={styles.formDesign}></div>
             <div className={styles.actualForm}>
-              <h1 className={styles.h1Center}>Log In</h1>
+              <h1 className={`${styles.h1Center} ${styles.h1Small}`}>
+                Create Account
+              </h1>
               <div className={styles.createAccount}>
-                <p>Don&apos;t have and account? </p>
-                <Link href="/signup" passHref={true}>
-                  <p>Create</p>
+                <p>Already have an account? </p>
+                <Link href="/login/user" passHref={true}>
+                  <p>Log In</p>
                 </Link>
               </div>
 
               <div className={styles.navigate}>
                 <p className={styles.currentUser}>As User</p>
-                <p onClick={() => router.push("/login/restaurant")}>
-                  As Restaurant
-                </p>
+                <Link href="/signup/restaurant" passHref={true}>
+                  <p>As Restaurant</p>
+                </Link>
               </div>
 
               <CustomInputField
+                title="Full Name"
+                inputType="text"
+                imgFirst="/auth/user.svg"
+              />
+              <CustomInputField
                 title="Phone Number"
                 inputType="text"
-                fieldType="number"
                 imgFirst="/auth/phone.svg"
+                fieldType="number"
               />
               <CustomInputField
                 title="Password"
                 inputType="password"
-                imgFirst="/auth/password.svg"
+                imgFirst="/auth/key.svg"
                 imgSecond={
                   !showUserPassword ? "/auth/hide.svg" : "/auth/show.svg"
                 }
                 showUserPassword={showUserPassword}
                 setShowUserPassword={setShowUserPassword}
               />
-              <button className={styles.loginButton}>Login</button>
+              <CustomInputField
+                title="Confirm Password"
+                inputType="password"
+                imgFirst="/auth/key.svg"
+                imgSecond={
+                  !showUserPassword ? "/auth/hide.svg" : "/auth/show.svg"
+                }
+                showUserPassword={showUserPassword}
+                setShowUserPassword={setShowUserPassword}
+              />
+              <button
+                className={`${styles.loginButton} ${styles.signUpButton}`}
+              >
+                Create Account
+              </button>
             </div>
           </div>
         </section>
       </>
     );
-  } else {
+  } else if (currentPath === "restaurant") {
     return (
       <>
-        <SEO title="Restaurant" desc="Restaurant to R for more features." />
+        <SEO title="Sign Up" desc="Sign Up to R for more features." />
         <section className={styles.loginWrapper}>
           <div className={styles.logo}>
             <Image
@@ -112,25 +131,40 @@ const UserAndRestrauntLogin = ({ currentPath }) => {
           <div className={styles.loginForm}>
             <div className={styles.formDesign}></div>
             <div className={styles.actualForm}>
-              <h1 className={styles.h1Center}>Log In</h1>
+              <h1 className={`${styles.h1Center} ${styles.h1Small}`}>
+                Create Account
+              </h1>
               <div className={styles.createAccount}>
-                <p>Don&apos;t have and account? </p>
-                <Link href="/signup/restaurant" passHref={true}>
-                  <p>Create</p>
+                <p>Already have an account? </p>
+                <Link href="/login/restaurant" passHref={true}>
+                  <p>Log In</p>
                 </Link>
               </div>
 
               <div className={styles.navigate}>
-                <p onClick={() => router.push("/login/user")}>As User</p>
-                <p className={styles.currentRestaurant}>As Restaurant</p>
+                <Link href="/signup/user" passHref={true}>
+                  <p>As User</p>
+                </Link>
+                <p
+                  className={`${styles.currentUser} ${styles.currentRestaurant}`}
+                >
+                  As Restaurant
+                </p>
               </div>
 
               <CustomInputField
-                title="Email"
+                title="Restaurant Name"
                 inputType="text"
-                fieldType="email"
+                imgFirst="/auth/pink_restaurant_menu.svg"
+              />
+              <CustomInputField
+                title="Email"
+                inputType="email"
                 imgFirst="/auth/pink_email.svg"
               />
+              <div className="location">
+                <p>Location</p>
+              </div>
               <CustomInputField
                 title="Password"
                 inputType="password"
@@ -141,7 +175,21 @@ const UserAndRestrauntLogin = ({ currentPath }) => {
                 showUserPassword={showRestaurantPassword}
                 setShowUserPassword={setShowRestaurantPassword}
               />
-              <button className={styles.loginButton}>Login</button>
+              <CustomInputField
+                title="Confirm Password"
+                inputType="password"
+                imgFirst="/auth/pink_key.svg"
+                imgSecond={
+                  !showUserPassword ? "/auth/hide.svg" : "/auth/show.svg"
+                }
+                showUserPassword={showRestaurantPassword}
+                setShowUserPassword={setShowRestaurantPassword}
+              />
+              <button
+                className={`${styles.loginButton} ${styles.signUpButton}`}
+              >
+                Create Account
+              </button>
             </div>
           </div>
         </section>
@@ -149,5 +197,4 @@ const UserAndRestrauntLogin = ({ currentPath }) => {
     );
   }
 };
-
-export default UserAndRestrauntLogin;
+export default UserAndRestrauntSignUp;

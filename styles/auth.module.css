@@ -13,6 +13,7 @@
 }
 
 .loginWrapper .logo {
+  position: relative;
   cursor: pointer;
 }
 
@@ -105,9 +106,14 @@
   padding-bottom: 0.5rem;
 }
 
-.navigate p.current {
+.navigate p.currentUser {
   color: #f6a729;
   border-bottom: 2px solid #f6a729;
+}
+
+.navigate p.currentRestaurant {
+  color: #ea455f;
+  border-bottom: 2px solid #ea455f;
 }
 
 .custom_input_field p {
@@ -155,5 +161,21 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+@media screen and (max-width: 320px) {
+  .loginWrapper {
+    margin: 1rem 0;
+  }
+  .loginWrapper .logo {
+    width: 35px;
+    height: 35px;
+  }
+  .loginForm .h1Center {
+    font-size: 2rem;
+  }
+  .loginForm .createAccount p {
+    font-size: 0.9rem;
+  }
 }
 /*# sourceMappingURL=auth.module.css.map */

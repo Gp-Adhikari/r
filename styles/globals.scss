@@ -1,5 +1,6 @@
 @import "./variables";
 
+// fonts
 @font-face {
   font-family: "Work Sans";
   src: url("../fonts/Work_Sans/static/WorkSans-Regular.ttf"),
@@ -45,4 +46,12 @@
   h2 {
     margin-left: 0.3rem;
   }
+}
+
+.display-flex {
+  display: flex;
+}
+
+.display-none {
+  display: none;
 }
