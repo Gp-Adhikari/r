@@ -40,10 +40,73 @@
       }
     }
 
-    .userSignIn {
-      p {
-        color: #fff;
-        cursor: pointer;
+    .userAndRestaurantLogSignWrapper {
+      .userSignIn {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        user-select: none;
+        p {
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+
+      // tooltip for user/restaurant sign in
+      .userAndRestaurantLogSign {
+        position: absolute;
+        z-index: 1;
+        top: 1rem;
+        margin-top: 0.5rem;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        .userAndRestaurantLogSignContainer {
+          background-color: #fff;
+          margin-top: -0.1rem;
+          padding: 2rem 1.5rem;
+          box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          .userAndRestaurantLogSignContent {
+            background-color: #f5f5f5;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3rem;
+            .userLogSign,
+            .restaurantLogSign {
+              background-color: #fff;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              padding: 0 1rem;
+              h3,
+              p {
+                margin: 1rem 0;
+              }
+              input[type="button"] {
+                padding: 0.4rem 1.3rem;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+              }
+            }
+            .userLogSign {
+              input[type="button"] {
+                background-color: $primary-color;
+              }
+            }
+            .restaurantLogSign {
+              input[type="button"] {
+                background-color: $tertiary-color;
+                color: #fff;
+              }
+            }
+          }
+          p {
+            color: #000;
+          }
+        }
       }
     }
   }
