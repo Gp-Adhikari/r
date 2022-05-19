@@ -1,13 +1,160 @@
-.mostVisitedContainer {
+.mainContainer {
   max-width: 1250px;
   margin: auto;
 }
 
-.mostVisitedContainer .mostVisitedCardContainer {
+.mostVisitedCardContainer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
+}
+
+.mostVisitedCardContainer .mostVisitedCard {
+  position: relative;
+}
+
+.mostVisitedCardContainer .mostVisitedCard .cardDesign {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.mostVisitedCardContainer .mostVisitedCard .cardDesign .restaurantName {
+  position: absolute;
+  right: 5%;
+  bottom: 7%;
+}
+
+.mostVisitedCardContainer .mostVisitedCard .cardDesign .restaurantName h1 {
+  color: white;
+}
+
+.starContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.starContainerSmall {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0.3rem;
+}
+
+.recommendedCardContainer {
+  margin-top: 6rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 6rem 2rem;
+  justify-items: end;
+}
+
+.recommendedCard {
+  position: relative;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.recommendedCard .recommendedCardImage {
+  -webkit-transform: translate(-30%, -30%);
+          transform: translate(-30%, -30%);
+}
+
+.recommendedCard .recommendedCardTextWrapper {
+  margin-left: -4rem;
+}
+
+.recommendedCard .recommendedCardDetail {
+  background-color: #fff;
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 550px;
+  width: 100%;
+}
+
+.recommendedCard .recommendedCardDetail .recommendedCardWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.recommendedCard .recommendedCardDetail .verifiedBadge {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #009300;
+  border-radius: 1000px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.recommendedCard .recommendedCardDetail .verifiedBadge p {
+  color: #fff;
+  margin-left: 0.3rem;
+  font-size: 12px;
+}
+
+.recommendedCard .recommendedCardDetail h1 {
+  margin-bottom: 0.5rem;
+}
+
+.recommendedCard .recommendedCardDetail .restaType {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 0.3rem 1rem;
+  background-color: #eeeeee;
+  margin-top: 1rem;
+}
+
+.recommendedCard .recommendedCardDetail .recommendedCardDesc {
+  margin-top: -4rem;
+}
+
+.recommendedCard .recommendedCardDetail .recommendedCardDesc h4 {
+  margin-bottom: 0.5rem;
+}
+
+.recommendedCard .recommendedCardDetail .recommendedCardDesc .viewDetailButton {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 0.8rem 2.2rem;
+  background-color: #000;
+  color: #fff;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 /*# sourceMappingURL=home.module.css.map */

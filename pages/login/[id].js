@@ -25,9 +25,34 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const UserAndRestrauntLogin = ({ currentPath }) => {
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("");
+  const [isPhoneNumberEmpty, setIsPhoneNumberEmpty] = useState(false);
+  const [isPasswordEmpty, setIsPasswordEmpty] = useState(false);
+
   const router = useRouter();
   const [showUserPassword, setShowUserPassword] = useState(false);
   const [showRestaurantPassword, setShowRestaurantPassword] = useState(false);
+
+  const SubmitLogin = (phoneNumber, password) => {
+    if (phoneNumber === "") {
+      return setIsPhoneNumberEmpty(true);
+    }
+    if (phoneNumber.length < 10) {
+      console.log(phoneNumber);
+      return setIsPhoneNumberEmpty(
+        "Phone Number must be at least 10 chars long"
+      );
+    }
+    setIsPhoneNumberEmpty(false);
+    if (password === "") {
+      return setIsPasswordEmpty(true);
+    }
+    if (password < 6) {
+      return setIsPasswordEmpty("Password must be at least 6 chars long");
+    }
+    setIsPasswordEmpty(false);
+  };
 
   if (currentPath === "user") {
     return (
@@ -72,18 +97,45 @@ const UserAndRestrauntLogin = ({ currentPath }) => {
                 inputType="text"
                 fieldType="number"
                 imgFirst="/auth/phone.svg"
+                value={phoneNumber}
+                setValue={setPhoneNumber}
               />
+              {isPhoneNumberEmpty === true ? (
+                <p className={styles.errorMessage}>
+                  *Phone Number is required.
+                </p>
+              ) : isPhoneNumberEmpty ===
+                "Phone Number must be at least 10 chars long" ? (
+                <p className={styles.errorMessage}>
+                  *Phone Number must be at least 10 chars long.
+                </p>
+              ) : null}
               <CustomInputField
                 title="Password"
                 inputType="password"
                 imgFirst="/auth/password.svg"
+                value={password}
+                setValue={setPassword}
                 imgSecond={
                   !showUserPassword ? "/auth/hide.svg" : "/auth/show.svg"
                 }
                 showUserPassword={showUserPassword}
                 setShowUserPassword={setShowUserPassword}
               />
-              <button className={styles.loginButton}>Login</button>
+              {isPasswordEmpty ? (
+                <p className={styles.errorMessage}>*Password is required.</p>
+              ) : isPasswordEmpty ===
+                "Password must be at least 6 chars long" ? (
+                <p className={styles.errorMessage}>
+                  *Password must be at least 6 chars long.
+                </p>
+              ) : null}
+              <button
+                className={styles.loginButton}
+                onClick={() => SubmitLogin(phoneNumber, password)}
+              >
+                Login
+              </button>
             </div>
           </div>
         </section>

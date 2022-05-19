@@ -10,6 +10,8 @@ const CustomInputField = ({
   showUserPassword,
   setShowUserPassword,
   fieldType,
+  value,
+  setValue,
 }) => {
   const inputRef = useRef(null);
 
@@ -23,9 +25,10 @@ const CustomInputField = ({
         <input
           type={inputType}
           ref={inputRef}
+          value={value}
           onChange={(e) => {
             if (fieldType === "number") {
-              e.target.value = e.target.value.replace(/[^0-9]/g, "");
+              setValue(e.target.value.replace(/[^0-9]/g, ""));
             }
           }}
         />

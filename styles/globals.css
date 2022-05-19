@@ -15,11 +15,15 @@
   outline: none;
 }
 
+body {
+  background-color: #f5f5f5;
+}
+
 .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 2rem 0;
+  margin: 4rem 0;
 }
 
 .title h1,
