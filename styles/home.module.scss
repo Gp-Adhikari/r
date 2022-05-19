@@ -1,25 +1,122 @@
 @import "./variables";
 
-.mostVisitedContainer {
+// main container for the home page
+.mainContainer {
   max-width: $max-width;
   margin: auto;
+}
 
-  .mostVisitedCardContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
+.mostVisitedCardContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
 
-    .mostVisitedCard {
-      img {
-        // width: 100%;
+  .mostVisitedCard {
+    position: relative;
+    .cardDesign {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      user-select: none;
+
+      .restaurantName {
+        position: absolute;
+        right: 5%;
+        bottom: 7%;
+        h1 {
+          color: white;
+        }
       }
-      // .cardDesign {
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   width: 100%;
-      //   height: 100%;
-      // }
+    }
+  }
+}
+
+// star rating
+.starContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.starContainerSmall {
+  display: flex;
+  margin-bottom: 0.3rem;
+}
+
+// recommended restaurant card container
+.recommendedCardContainer {
+  margin-top: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem 2rem;
+  justify-items: end;
+}
+
+// recommended restaurant card
+.recommendedCard {
+  position: relative;
+  align-self: end;
+  .recommendedCardImage {
+    transform: translate(-30%, -30%);
+  }
+  .recommendedCardTextWrapper {
+    margin-left: -4rem;
+  }
+  .recommendedCardDetail {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-end;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 550px;
+    width: 100%;
+    .recommendedCardWrapper {
+      display: flex;
+    }
+    .verifiedBadge {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      background: #009300;
+      border-radius: 1000px;
+      padding: 0.3rem 1rem;
+      margin-bottom: 0.5rem;
+      p {
+        color: #fff;
+        margin-left: 0.3rem;
+        font-size: 12px;
+      }
+    }
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+    .restaType {
+      width: fit-content;
+      border-radius: 10px;
+      padding: 0.3rem 1rem;
+      background-color: #eeeeee;
+      margin-top: 1rem;
+    }
+    .recommendedCardDesc {
+      margin-top: -4rem;
+      h4 {
+        margin-bottom: 0.5rem;
+      }
+      .viewDetailButton {
+        width: fit-content;
+        margin-top: 1rem;
+        border-radius: 5px;
+        padding: 0.8rem 2.2rem;
+        background-color: #000;
+        color: #fff;
+        align-self: flex-start;
+      }
     }
   }
 }

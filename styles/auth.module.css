@@ -130,7 +130,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .custom_input_field .input_field input {
@@ -144,6 +144,12 @@
 
 .custom_input_field .input_field .icon {
   cursor: pointer;
+}
+
+p.errorMessage {
+  color: #ea455f;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
 }
 
 .loginButton {

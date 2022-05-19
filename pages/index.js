@@ -1,5 +1,6 @@
 import Header from "../components/Header.component";
 import MostVisited from "../components/MostVisited.component";
+import RecommendedCardContainer from "../components/Recommended/RecommendedCardContainer";
 import SEO from "../components/SEO";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <SEO title="Home" desc="Description" />
       <Header />
       <MostVisited />
+      <RecommendedCardContainer />
     </>
   );
 };
