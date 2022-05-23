@@ -1,0 +1,314 @@
+@import "variables";
+
+.dFlex {
+  display: flex;
+}
+.mainContent {
+  width: 100%;
+  background-color: $panel-background-color;
+}
+
+.headerWrapper {
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
+  background-color: #fff;
+  header {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 2rem;
+    padding: 1.5rem 0;
+    .restaurantInfo {
+      display: flex;
+      align-items: center;
+      .restaurantLogo {
+        margin-left: 0.5rem;
+        background-color: #ffc1c1;
+        border-radius: 50%;
+        padding: 0.3rem;
+      }
+    }
+  }
+}
+
+.sidebarContainer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  max-width: 250px;
+  width: 100%;
+  background-color: $panel-primary-color;
+
+  .panelLogo {
+    padding: 1.5rem 0;
+    margin: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1.5px solid #272c43;
+  }
+
+  .menuContainer {
+    ul {
+      list-style: none;
+      padding: 0 1.5rem;
+      li {
+        padding: 1.2rem 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        p {
+          margin-left: 1rem;
+          color: #fff;
+          font-size: 1.2rem;
+        }
+        &.dropdown {
+          display: flex;
+          flex-direction: column;
+          padding: 1.2rem 0;
+          .dropdownWrapper {
+            display: flex;
+            padding-bottom: 1.2rem;
+          }
+        }
+        .arrowDown {
+          margin-left: 77px;
+        }
+        ul.dropdownItems {
+          // display: none;
+          li {
+            padding: 1.2rem 1rem;
+            // background-image: $panel-primary-color;
+            background-color: #272c43;
+            &:nth-child(2) {
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.panelMainContent {
+  margin: 0 2rem;
+}
+.panelTitle {
+  padding: 2.5rem 0 1.5rem 0;
+  font-size: 2rem;
+}
+.dashboardContent {
+  display: flex;
+  margin-bottom: 1rem;
+  .DashboardCard {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 270px;
+    width: 100%;
+    padding: 1.5rem 1.2rem;
+    border-radius: 5px;
+    margin-right: 2rem;
+    background-color: #fff;
+    &:last-child {
+      margin-right: 0;
+    }
+    p {
+      &:last-child {
+        font-weight: bold;
+        font-size: 1.3rem;
+      }
+    }
+  }
+  .today_sale {
+    border-left: 4px solid $panel-blue;
+    p {
+      &:first-child {
+        color: $panel-blue;
+      }
+    }
+  }
+  .total_sale {
+    border-left: 4px solid $panel-pink;
+    p {
+      &:first-child {
+        color: $panel-pink;
+      }
+    }
+  }
+  .remain_order {
+    border-left: 4px solid $panel-green;
+    p {
+      &:first-child {
+        color: $panel-green;
+      }
+    }
+  }
+}
+
+.liveTableContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 3rem 1.5rem;
+}
+
+.tableContainerWrapper {
+  background-color: #fff;
+  padding: 1.5rem;
+  height: fit-content;
+  p.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+}
+.tableContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.blockedTableContainer,
+.emptyTableContainer {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  p {
+    &:first-child {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+.blockedTableContainer {
+  background-color: $panel-primary-color;
+  color: #fff;
+}
+.emptyTableContainer {
+  border: 2px solid $panel-primary-color;
+  color: #000;
+}
+
+.dGrid {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  gap: 2rem;
+}
+
+.orderContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.1rem;
+  text-align: center;
+
+  .orderTableItem {
+    background-color: rgba(0, 0, 0, 0.01);
+    .orderTableItemTitle {
+      width: 100%;
+      background-color: $secondary-color;
+    }
+    p {
+      padding: 0.5rem 0;
+
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      &:first-child {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.dTitleButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  input {
+    padding: 0.7rem 2.5rem;
+    border: 0;
+    background-color: $primary-color;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+}
+
+.searchBox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  select,
+  input {
+    border: 0;
+  }
+
+  select {
+    background: $panel-primary-color;
+    border-radius: 5px 0 0 5px;
+    padding: 0.9rem 0.7rem;
+    color: #fff;
+  }
+
+  input {
+    color: #000;
+    padding: 0 0.7rem;
+    width: 350px;
+    border: 1px solid $panel-primary-color;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+.tableListContainer {
+  .tableListContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    gap: 0.1rem;
+
+    .tableListItem {
+      background-color: rgba(0, 0, 0, 0.01);
+      .tableListItemTitle {
+        width: 100%;
+        background-color: $secondary-color;
+      }
+      p {
+        padding: 0.5rem 0;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        &:first-child {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.removeIcon {
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: $panel-red;
+}
+
+.catogoriesTable {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.1rem;
+  text-align: center;
+  .catogoriesTableItem {
+    background-color: rgba(0, 0, 0, 0.01);
+    .catogoriesTableItemTitle {
+      width: 100%;
+      background-color: $secondary-color;
+    }
+    p {
+      padding: 0.5rem 0;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      &:first-child {
+        font-weight: bold;
+      }
+    }
+  }
+}

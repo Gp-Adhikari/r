@@ -16,12 +16,14 @@ const Header = () => {
     <>
       <div className={styles.headerWrapper}>
         <header>
-          <Image
-            src="/logo.svg"
-            alt="logo of the site"
-            width={30}
-            height={30}
-          />
+          <div className={styles.logo}>
+            <Image
+              src="/logo.svg"
+              alt="logo of the site"
+              width={30}
+              height={30}
+            />
+          </div>
           <div className={styles.searchBox}>
             <select>
               <option value="">Any</option>
@@ -52,12 +54,14 @@ const Header = () => {
                 />
               </p>
               <div className={styles.userAndRestaurantLogSign} ref={tooltipRef}>
-                <Image
-                  src="/upArrow.svg"
-                  alt="uparrow"
-                  width={10}
-                  height={10}
-                />
+                <div className={styles.upArrow}>
+                  <Image
+                    src="/upArrow.svg"
+                    alt="uparrow"
+                    width={10}
+                    height={10}
+                  />
+                </div>
                 <div className={styles.userAndRestaurantLogSignContainer}>
                   <div className={styles.userAndRestaurantLogSignContent}>
                     <div className={styles.userLogSign}>

@@ -49,7 +49,7 @@
 
 // recommended restaurant card container
 .recommendedCardContainer {
-  margin-top: 6rem;
+  margin-top: 7.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem 2rem;
@@ -67,9 +67,6 @@
     margin-left: -4rem;
   }
   .recommendedCardDetail {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-end;
     background-color: #fff;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
