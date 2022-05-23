@@ -8,12 +8,16 @@
     max-width: $max-width;
     margin: auto;
     padding: 1.5rem 0;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto auto;
     align-items: center;
 
+    .logo {
+      justify-self: start;
+    }
     .searchBox {
       display: flex;
+      justify-self: center;
       border-radius: 5px;
 
       select,
@@ -29,7 +33,7 @@
 
       input {
         padding: 0 0.7rem;
-        width: 320px;
+        width: 350px;
       }
 
       .searchBtn {
@@ -41,15 +45,17 @@
     }
 
     .userAndRestaurantLogSignWrapper {
+      justify-self: end;
       .userSignIn {
         position: relative;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        // align-items: center;
         user-select: none;
         p {
           color: #fff;
           cursor: pointer;
+          user-select: none;
         }
       }
 
@@ -58,13 +64,18 @@
         position: absolute;
         z-index: 1;
         top: 1rem;
+        transform: translate(-50%, 0%);
         margin-top: 0.5rem;
         display: none;
         flex-direction: column;
         align-items: center;
+        .upArrow {
+          align-self: flex-end;
+          margin-right: 2.5rem;
+        }
         .userAndRestaurantLogSignContainer {
           background-color: #fff;
-          margin-top: -0.1rem;
+          margin-top: -0.4rem;
           padding: 2rem 1.5rem;
           box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
           border-radius: 10px;
@@ -107,6 +118,53 @@
             color: #000;
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .headerWrapper {
+    header {
+      margin: 0 2rem;
+      .userAndRestaurantLogSignWrapper {
+        .userAndRestaurantLogSign {
+          .userAndRestaurantLogSignContainer {
+            padding: 1rem 0.5rem;
+            .userAndRestaurantLogSignContent {
+              .userLogSign,
+              .restaurantLogSign {
+                h3 {
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .headerWrapper {
+    header {
+      grid-template-areas:
+        "logo logo logo menu menu menu"
+        "search search search search search search";
+      .logo {
+        grid-area: logo;
+      }
+      .searchBox {
+        grid-area: search;
+        width: 100%;
+        margin-top: 1rem;
+        input {
+          width: 100%;
+        }
+      }
+      .userAndRestaurantLogSignWrapper {
+        grid-area: menu;
       }
     }
   }
